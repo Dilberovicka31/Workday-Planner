@@ -3,7 +3,7 @@ Work day planner
 
 * Workday planner is quick way to manage busy work week with a daily planner so you are able to manage time effectively 
 
-* Planner description 
+# Planner description 
 
 Designed with time slots between 9am and 5pm for work week;
 
