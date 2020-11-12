@@ -1,6 +1,22 @@
-var d = new Date();
-    document.getElementById("currentDay").innerHTML = d;
 
+var now = moment();
+var today = $("#currentDay").text(now.format("MMMM Do YYYY, h:mm:ss a" ));
+
+
+
+
+
+
+
+
+
+   
+
+ 
+
+  
+ 
+    
     //var i = 9;
     //Element ID = "hour" + i;
     //FOR  Loop over the hours of the day I = 9 to i <= 17
