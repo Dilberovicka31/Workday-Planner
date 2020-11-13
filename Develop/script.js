@@ -1,8 +1,37 @@
 
 var now = moment();
 var today = $("#currentDay").text(now.format("MMMM Do YYYY, h:mm:ss a" ));
+var newTime = moment().format();
 
 
+var description = ($(".description"));
+var times = (".hour");
+var row = (".time-block");
+
+
+for (var i = 0; i < 9; i++) {
+   if (row < today); {
+        description.addClass("past");
+    }
+    
+    if (row === today ); {
+        description.addClass("present");
+    }
+    
+    if (row > today); {
+        description.addClass("future");
+    }
+
+}
+
+
+var saveBtn = $(".saveBtn").on("click", function(e) {
+    e.preventDefault();
+ //Save data in the local storage - addEventlistener click on a parent element to listen to save button event delegation 
+    //event propagation 
+
+
+})
 
 
 
@@ -30,5 +59,4 @@ var today = $("#currentDay").text(now.format("MMMM Do YYYY, h:mm:ss a" ));
     // OPTION -A Select matching element - $( Element ID ).css ("background");
     // OPTION -B Select matching element - $( Element ID ).addClass ("is-past");
 
-    //Save data in the local storage - addEventlistener click on a parent element to listen to save button event delegation 
-    //event propagation 
+   
