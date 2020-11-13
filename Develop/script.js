@@ -1,7 +1,7 @@
 
 var now = moment();
 var today = $("#currentDay").text(now.format("MMMM Do YYYY, h:mm:ss a" ));
-var newTime = moment().format();
+var currentTime = now.format("HH");
 
 
 var description = ($(".description"));
@@ -9,7 +9,7 @@ var times = (".hour");
 var row = (".time-block");
 
 
-for (var i = 0; i < 9; i++) {
+for (var i = 9; i < 18; i++) {
    if (row < today); {
         description.addClass("past");
     }
