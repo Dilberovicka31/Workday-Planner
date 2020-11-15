@@ -21,28 +21,7 @@ for (var i = 9; i < 18; i++) {
     }else (times > currentTime); {
         description.addClass("future");
     }
-//  }  else if (times === currentTime); {
-//             description.addClass("present");
-//     }
-//     else (times > currentTime); {
-//         description.addClass("present")
-//     };
-
-    
-    
-
-    
-    // let (times === currentTime) ; {
-    //     description.addClass("present");}
-    
-    
-    // let (times > currentTime); 
-    //     description.addClass("future");
-    
-    
 }
-
-//if current time === block time . hour
 
 
  $(".saveBtn").on("click", function(e) {
