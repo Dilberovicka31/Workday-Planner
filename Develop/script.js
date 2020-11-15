@@ -14,16 +14,30 @@ var row = (".time-block");
 
 
 for (var i = 9; i < 18; i++) {
-   if (times < currentTime); {
+   if (times < currentTime) {
         description.addClass("past");
-    }
-    
-    let (times === currentTime) ; {
-        description.addClass("present");}
-    
-    
-    let (times > currentTime); 
+    }else if (times === currentTime) {
+        description.addClass("present");
+    }else (times > currentTime); {
         description.addClass("future");
+    }
+//  }  else if (times === currentTime); {
+//             description.addClass("present");
+//     }
+//     else (times > currentTime); {
+//         description.addClass("present")
+//     };
+
+    
+    
+
+    
+    // let (times === currentTime) ; {
+    //     description.addClass("present");}
+    
+    
+    // let (times > currentTime); 
+    //     description.addClass("future");
     
     
 }
@@ -69,4 +83,3 @@ renderPlanner();
     // OPTION -A Select matching element - $( Element ID ).css ("background");
     // OPTION -B Select matching element - $( Element ID ).addClass ("is-past");
 
-   
