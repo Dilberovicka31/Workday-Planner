@@ -1,64 +1,54 @@
-
 var now = moment();
-var today = $("#currentDay").text(moment().format("dddd, MMMM, Do" ));
+var today = $("#currentDay").text(moment().format("dddd, MMMM, Do"));
 var currentTime = moment().format("HH");
 console.log(today);
 
-var timePlace = [9,10,11,12,13,14,15,16,17];
-
 console.log(currentTime);
+var description = $(".description");
 
-var description = ($(".description"));
-var times = (".hour");
-var row = (".time-block");
+//change time blocks color based on time
+function timeColor() {}
 
+$(".saveBtn").on("click", function (e) {
+  e.preventDefault();
+  var selectedTimeBlock = $(this).parent().attr("id");
+  var selectedDescription = $(this).siblings(".description").val();
+  localStorage.setItem(selectedTimeBlock, selectedDescription);
+});
 
-for (var i = 9; i < 18; i++) {
-   if (times < currentTime) {
-        description.addClass("past");
-    }else if (times === currentTime) {
-        description.addClass("present");
-    }else (times > currentTime); {
-        description.addClass("future");
-    }
-}
-
-
- $(".saveBtn").on("click", function(e) {
-    e.preventDefault();
-    var dataHour = $(this).attr("data-hr");
-    var inputField = $("#" + dataHour ).val();
-    localStorage.setItem(dataHour, inputField);
-
-})
-
-function renderPlanner (){
-    for (var i=0; i <= currentTime; i++){
-        $("#" + timePlace[i]).val(localStorage.getItem(timePlace[i]));
-    }
+function renderPlanner() {
+  //get data out of local storage
+  var storedData = localStorage.getItem("9");
+  $("#9 .description").val(storedData);
+  var storedData = localStorage.getItem("10");
+  $("#10 .description").val(storedData);
+  var storedData = localStorage.getItem("11");
+  $("#11 .description").val(storedData);
+  var storedData = localStorage.getItem("12");
+  $("#12 .description").val(storedData);
+  var storedData = localStorage.getItem("13");
+  $("#13 .description").val(storedData);
+  var storedData = localStorage.getItem("14");
+  $("#14 .description").val(storedData);
+  var storedData = localStorage.getItem("15");
+  $("#15 .description").val(storedData);
+  var storedData = localStorage.getItem("16");
+  $("#16 .description").val(storedData);
+  var storedData = localStorage.getItem("17");
+  $("#17 .description").val(storedData);
 }
 
 renderPlanner();
 
+//var i = 9;
+//Element ID = "hour" + i;
+//FOR  Loop over the hours of the day I = 9 to i <= 17
 
+//Color code them depends on the past, current, future
 
-   
+//Currently checking  9AM < the current hour
+//9am is in the past
+//Select matching element - $(  Element id )
 
- 
-
-  
- 
-    
-    //var i = 9;
-    //Element ID = "hour" + i;
-    //FOR  Loop over the hours of the day I = 9 to i <= 17
-
-    //Color code them depends on the past, current, future
-
-    //Currently checking  9AM < the current hour
-    //9am is in the past
-    //Select matching element - $(  Element id ) 
-
-    // OPTION -A Select matching element - $( Element ID ).css ("background");
-    // OPTION -B Select matching element - $( Element ID ).addClass ("is-past");
-
+// OPTION -A Select matching element - $( Element ID ).css ("background");
+// OPTION -B Select matching element - $( Element ID ).addClass ("is-past");
