@@ -1,13 +1,8 @@
 var now = moment();
 var today = $("#currentDay").text(moment().format("dddd, MMMM, Do"));
 var currentTime = moment().format("HH");
-console.log(today);
 
-console.log(currentTime);
 var description = $(".description");
-
-//change time blocks color based on time
-function timeColor() {}
 
 $(".saveBtn").on("click", function (e) {
   e.preventDefault();
@@ -42,16 +37,16 @@ renderPlanner();
 
 //loop over time blocks and change color based on time
 function timeColor() {
-    for (var i = 0; i < description.length; i++) {
-        var timeBlock = description[i].parentElement.id;
-        var timeBlock = parseInt(timeBlock);
-        if (timeBlock < currentTime) {
-        description[i].classList.add("past");
-        } else if (timeBlock == currentTime) {
-        description[i].classList.add("present");
-        } else if (timeBlock > currentTime) {
-        description[i].classList.add("future");
-        }
+  for (var i = 0; i < description.length; i++) {
+    var timeBlock = description[i].parentElement.id;
+    var timeBlock = parseInt(timeBlock);
+    if (timeBlock < currentTime) {
+      description[i].classList.add("past");
+    } else if (timeBlock == currentTime) {
+      description[i].classList.add("present");
+    } else if (timeBlock > currentTime) {
+      description[i].classList.add("future");
     }
-    }
-    timeColor();
+  }
+}
+timeColor();
