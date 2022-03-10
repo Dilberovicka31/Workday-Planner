@@ -40,15 +40,18 @@ function renderPlanner() {
 
 renderPlanner();
 
-//var i = 9;
-//Element ID = "hour" + i;
-//FOR  Loop over the hours of the day I = 9 to i <= 17
-
-//Color code them depends on the past, current, future
-
-//Currently checking  9AM < the current hour
-//9am is in the past
-//Select matching element - $(  Element id )
-
-// OPTION -A Select matching element - $( Element ID ).css ("background");
-// OPTION -B Select matching element - $( Element ID ).addClass ("is-past");
+//loop over time blocks and change color based on time
+function timeColor() {
+    for (var i = 0; i < description.length; i++) {
+        var timeBlock = description[i].parentElement.id;
+        var timeBlock = parseInt(timeBlock);
+        if (timeBlock < currentTime) {
+        description[i].classList.add("past");
+        } else if (timeBlock == currentTime) {
+        description[i].classList.add("present");
+        } else if (timeBlock > currentTime) {
+        description[i].classList.add("future");
+        }
+    }
+    }
+    timeColor();
